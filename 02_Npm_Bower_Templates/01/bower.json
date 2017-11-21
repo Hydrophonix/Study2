@@ -1,0 +1,26 @@
+{
+  "name": "homework.2.1.",
+  "description": "first",
+  "main": "index.js",
+  "authors": [
+    "Hydrophonix <hydrophonixfx@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "boss"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "underscore": "1.8.2",
+    "backbone": "1.x.x",
+    "angular": ">1.5.0",
+    "handlebars": "*"
+  }
+}

@@ -1,0 +1,19 @@
+<div class="movie">
+    <div class="movie-image">
+        <a href="#">
+                <span class="play">
+                    <span class="name">{{title}}</span>
+                </span>
+            <img src="{{imgUrl}}" alt="{{title}}"/>
+        </a>
+    </div>
+
+    <div class="rating">
+        <p>RATING</p>
+
+        <div class="stars">
+            {{#newStars}}{{stars}}{{/newStars}}
+        </div>
+        <span class="comments">{{votes}}</span>
+    </div>
+</div>

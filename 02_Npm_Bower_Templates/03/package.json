@@ -1,0 +1,11 @@
+{
+    "name": "Hydrophonix",
+    "version": "1.0.0",
+    "author": "Front-end Science",
+    "scripts": {
+        "build": "./node_modules/.bin/handlebars templates/table.handlebars -f templates/table.js"
+    },
+    "devDependencies": {
+        "handlebars": "^4.*.*"
+    }
+}
