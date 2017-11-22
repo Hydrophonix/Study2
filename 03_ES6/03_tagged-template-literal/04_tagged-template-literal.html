@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tagged Templates</title>
+  <style>
+    abbr {
+      border-bottom: 1px dotted grey;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bio">
+
+  </div>
+
+  <script>
+    const dict = {
+      HTML: 'Hyper Text Markup Language',
+      CSS: 'Cascading Style Sheets',
+      JS: 'JavaScript'
+    };
+
+    const firstName = 'Valentine ';
+    const lastName = 'Mikolyuk';
+
+    function highlight(strings, ...values) {
+      let str = `${strings[0]} ${values[0]} ${values[1]}`;
+
+      strings.forEach((string, i) => {
+        str += `${string} ${dict.values[i] ? dict.values[i] : ''} `;
+      });
+      return str;
+    }
+    const sentence = highlight `Hello my name is ${firstName} ${lastName} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}`;
+
+    const bio = document.querySelector('.bio');
+    const p = document.createElement('p');
+    p.innerHTML = sentence;
+    bio.appendChild(p);
+  </script>
+</body>
+
+</html>
