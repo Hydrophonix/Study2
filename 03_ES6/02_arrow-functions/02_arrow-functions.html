@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+
+<body>
+
+  <ul>
+    <li data-time="5:17">ES6 Video</li>
+    <li data-time="8:22">ES6 Video</li>
+    <li data-time="3:34">Handlebars Video</li>
+    <li data-time="5:23">ES6 Video</li>
+    <li data-time="7:12">ES6 Video</li>
+    <li data-time="7:24">Handlebars Video</li>
+    <li data-time="6:46">ES6 Video</li>
+    <li data-time="4:45">ES6 Video</li>
+    <li data-time="4:40">ES6 Video</li>
+    <li data-time="7:58">Handlebars Video</li>
+    <li data-time="11:51">ES6 Video</li>
+    <li data-time="9:13">ES6 Video</li>
+    <li data-time="5:50">ES6 Video</li>
+    <li data-time="5:52">Handlebars Video</li>
+    <li data-time="5:49">ES6 Video</li>
+    <li data-time="8:57">ES6 Video</li>
+    <li data-time="11:29">ES6 Video</li>
+    <li data-time="3:07">ES6 Video</li>
+    <li data-time="5:59">Handlebars Video</li>
+    <li data-time="3:31">ES6 Video</li>
+  </ul>
+
+  <script>
+    // 1. Select all the list items on the page and convert to array.
+    const liCollection = document.getElementsByTagName('li');
+
+    // 2. Filter for only the elements that contain the word ES6.
+
+    // method startsWith
+    const startsWithFilter = Array.from(liCollection).filter(item =>
+      item.innerText.startsWith('ES6')
+    );
+    // method regExp
+    const regExpFilter = Array.from(liCollection).filter(item =>
+      item.innerText.match(/[ES6]\w+/g)
+    );
+
+    // 3. Map down to a list of time strings.
+    const timeStrings = startsWithFilter.map(item => item.dataset.time);
+
+    // 4. map to an array of seconds.
+    const seconds = timeStrings.map(item => {
+      const str = item.split(':');
+      return parseInt(str[0] * 60) + parseInt(str[1]);
+    });
+
+    // 5. Reduce to get total.
+    const reduce = seconds.reduce((value, item) => value += item, 0);
+
+    // 6.1 megaChain
+    const megaChain = Array.from(document.getElementsByTagName('li'))
+      .filter(item => item.innerText.match(/[ES6]\w+/g))
+      .map(item => item.dataset.time)
+      .map(item => {
+        const str = item.split(':');
+        return parseInt(str[0] * 60) + parseInt(str[1]);
+      })
+      .reduce((value, item) => value += item, 0);
+
+    // 6.2 kingReduce
+
+    const kingReduce = Array.from(liCollection).reduce((value, item) => {
+      if (item.innerText.match(/[ES6]\w+/g)) {
+        const nmbArr = item.dataset.time.split(':');
+        value += +nmbArr[0] * 60 + +nmbArr[1];
+      }
+      return value;
+    }, 0);
+
+    console.log('Its "liCollection": ', liCollection);
+    console.log('Its array with only ES6 videos: ', startsWithFilter);
+    console.log('Same array, regExp:', regExpFilter);
+    console.log('List of time strings: ', timeStrings);
+    console.log('List of seconds: ', seconds);
+    console.log('Total length of videos in seconds, reduce ver.:', reduce);
+    console.log('megaChain ver.: ', megaChain);
+    console.log('kingReduce ver.: ', kingReduce);
+  </script>
+</body>
+
+</html>
