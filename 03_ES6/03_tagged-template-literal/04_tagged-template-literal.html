@@ -29,14 +29,14 @@
 
     const highlight = (strings, ...values) => strings.reduce((str, string, i) =>
       `${str} ${string} ${dict[values[i]] ? `<abbr title="${dict[values[i]]}">${values[i]}</abbr>` : values[i] ? values[i] : ''}`
-    );
+    , '');
 
     const highlight2 = (strings, ...values) => {
       const newVal = values.map(item => dict[item] ? `<abbr title="${dict[item]}">${item}</abbr>` : item);
-      return strings.reduce((str, string, i) => `${str}${string} ${newVal[i] ? newVal[i] : ''}`)
+      return strings.reduce((str, string, i) => `${str}${string} ${newVal[i] ? newVal[i] : ''}`, '')
     }
 
-    const sentence = highlight2 `Hello my name is ${firstName} ${lastName} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}`;
+    const sentence = highlight2`Hello my name is ${firstName} ${lastName} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}`;
 
     const bio = document.querySelector('.bio');
     const p = document.createElement('p');
