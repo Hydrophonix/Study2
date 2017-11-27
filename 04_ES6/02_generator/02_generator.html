@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hw 4.2 Generators</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    function ajax(url) {
+      fetch(url).then(data => data.json()).then(data => dataGen.next(data))
+    }
+
+    function getHTML(arr) {
+      return arr.reduce((str, item) => `${str}
+      <h2 class="area">${item.login}</h2>
+      <ul class="list">${item.repos.reduce((str, item) => `${str}
+        <li>
+          <a href="${item.url}">${item.name}</a>
+          <span>${item.language || 'Unknown language'}</span>
+        </li>`
+        , '')}
+      </ul>`
+    , '');
+    }
+
+    function* getData() {
+      const users = [];
+      const gitHub = yield ajax('https://api.github.com/orgs/frontend-science');
+      console.log(gitHub);
+      const members = yield ajax(gitHub.public_members_url.replace('{/member}', ''));
+      console.log(members);
+      for (const item of members) {
+        const reposContent = yield ajax(item.repos_url);
+        users.push({
+          login: item.login,
+          repos: reposContent
+        });
+      }
+
+      yield document.getElementById('root').innerHTML = getHTML(users);
+    }
+
+    const dataGen = getData();
+    dataGen.next();
+  </script>
+</body>
+
+</html>
