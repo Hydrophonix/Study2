@@ -5,23 +5,24 @@
   "main": "./js/app.js",
   "scripts": {
     "start": "cross-env NODE_ENV='development' webpack-dev-server --port 3000 --content-base public --debug --hot --output-pathinfo --watch --inline",
-    "build": "cross-env NODE_ENV='production' webpack -p",
-    "author": "Hydrophonix",
-    "license": "ISC",
-    "devDependencies": {
-      "jquery": "^3.2.1",
-      "cross-env": "^5.0.5",
-      "babel-cli": "^6.9.0",
-      "babel-core": "^6.26.0",
-      "babel-eslint": "^8.0.1",
-      "babel-loader": "^7.1.2",
-      "babel-preset-env": "^1.6.0",
-      "babel-preset-stage-0": "^6.24.1",
-      "eslint": "^4.7.2",
-      "eslint-loader": "^1.9.0",
-      "css-loader": "^0.28.7",
-      "style-loader": "^0.18.2",
-      "webpack": "^3.8.1",
-      "webpack-dev-server": "^2.8.2"
-    }
+    "build": "cross-env NODE_ENV='production' webpack -p"
+  },
+  "author": "Hydrophonix",
+  "license": "ISC",
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "cross-env": "^5.0.5",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^4.7.2",
+    "eslint-loader": "^1.9.0",
+    "css-loader": "^0.28.7",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.8.2"
   }
+}
