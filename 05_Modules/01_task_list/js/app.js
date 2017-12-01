@@ -1,3 +1,4 @@
+import "../css/tasks.css";
 import { tasks } from "./tasks.js";
 
 function _addTask() {
