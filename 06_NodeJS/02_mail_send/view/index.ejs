@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <form id="contact" action="/mail" method="post">
+            <h3>Order Form</h3>
+            <h4>Pls fill the form</h4>
+            <% if (errors) { %>
+              <section class="errors">
+                <ul>
+                  <% errors.forEach(function(item) { %>
+                   <li><%= item.msg %></li>
+                  <% }); %>
+                </ul>
+              </section>
+            <% } %>
+            <fieldset>
+                <input
+                  <% if (data.name) { %>
+                    value="<%= data.name %>"
+                  <% } %>
+                  name="name" placeholder="Your name" type="text" autofocus>
+            </fieldset>
+            <fieldset>
+                <input
+                <% if (data.sname) { %>
+                  value="<%= data.sname %>"
+                <% } %>
+                name="sname" placeholder="Your second name" type="text">
+            </fieldset>
+            <fieldset>
+                <input
+                <% if (data.email) { %>
+                  value="<%= data.email %>"
+                <% } %>
+                name="email" placeholder="Your Email Address" type="email">
+            </fieldset>
+            <fieldset>
+                <input
+                <% if (data.phone) { %>
+                  value="<%= data.phone %>"
+                <% } %>
+                name="phone" placeholder="+xx xxx-xx-xx-xx" type="tel">
+            </fieldset>
+            <fieldset>
+                <input
+                <% if (data.site) { %>
+                  value="<%= data.site %>"
+                <% } %>
+                name="site" placeholder="Your Web Site (optional)" type="url">
+            </fieldset>
+            <fieldset>
+              <textarea name="text" placeholder="Type your message here...."><%if(data.text){%><%= data.text %><%}%></textarea>
+            </fieldset>
+            <fieldset>
+                <button type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
