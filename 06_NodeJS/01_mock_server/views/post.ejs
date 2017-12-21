@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/form.css' />
+  </head>
+  <body>
+    <a href="/api/<%= api %>/posts/"><button>BACK</button></a>
+    <h1>CREATE NEW POST</h1>
+    <div class="container">
+      <form action="/api/<%= api %>/posts/" method="post">
+        <fieldset>
+          <p>Image url:</p>
+          <input
+            name="imgUrl"
+            placeholder="Please enter url to img"
+            type="text"
+          >
+          <p>Number of likes:</p>
+          <input
+            name="likeCount"
+            placeholder="Your like count"
+            type="number"
+          >
+          <p>Description:</p>
+          <input
+            size="70"
+            name="description"
+            placeholder="Please enter the description of your post"
+            type="text"
+          >
+        </fieldset>
+        <button type="submit">ADD POST</button>
+      </form>
+    </div>
+  </body>
+</html>

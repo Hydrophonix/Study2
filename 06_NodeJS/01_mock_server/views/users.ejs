@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <a href="/"><button>BACK</button></a>
+    <a href="/create/user/"><button>ADD USER</button></a>
+    <div>
+      <% for (var i = 0; i < data.length; i++) { %>
+        <div class="user__item">
+          <div>
+            <div class="user__item__container">
+              <h1><%= data[i].id %></h1>
+              <img src="<%= data[i].image %>" alt="<%= data[i].name %>">
+              <div class="user__item__container--info">
+                <div>
+                  <% if(data[i].following.tags.length > 0){ %>
+                    <h1>Tags:</h1>
+                    <% data[i].following.tags.forEach(function(item) { %>
+                      <div class="decorator">
+                        <p>Name: <%= item.name %></p>
+                        <p>Active: <%= item.active %></p>
+                      </div>
+                    <% }); %>
+                  <% } else { %>
+                    <p>no tags uploaded</p>
+                  <% } %>
+                </div>
+                <div>
+                  <% if(data[i].following.users.length > 0){ %>
+                    <h1>users:</h1>
+                    <% data[i].following.users.forEach(function(item) { %>
+                      <div class="decorator">
+                        <p>ID: <%= item.id %></p>
+                        <p>Active: <%= item.active %></p>
+                      </div>
+                    <% }); %>
+                  <% } else{ %>
+                    <p>no users uploaded</p>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+            <p>Name: <%= data[i].name %></p>
+            <p>Password: <%= data[i].password %></p>
+            <a href="<%= data[i].email %>">email: <%= data[i].email %></a>
+          </div>
+          <div>
+            <a href='/edit/users/<%= data[i].id %>'>
+              <button
+              class="edit-button"
+              data-type="users"
+              name="<%= data[i].id %>"
+              >
+              EDIT
+            </button>
+          </a>
+            <button
+              class="delete-button"
+              name="<%= data[i].id %>"
+            >
+              DELETE
+            </button>
+          </div>
+        </div>
+      <% } %>
+    </div>
+    <script type="text/javascript" src="/js/deleteListener.js"></script>
+  </body>
+</html>
