@@ -1,0 +1,24 @@
+<div class="cart">
+    <ul id="cartWrap">
+      {{#each products}}
+        <li class="items" id="{{id}}">
+
+            <div class="infoWrap">
+                <div class="cartSection">
+                    <img src="{{imgUrl}}" alt="{{name}}" class="itemImg"/>
+                    <p class="itemNumber">{{id}}</p>
+                    <h3>{{name}}</h3>
+                    <p><input type="number" data-id="{{id}}" class="qty" value="{{qty}}"/> x ${{price}}</p>
+                </div>
+
+                <div class="prodTotal cartSection">
+                    <p id="p-{{id}}">${{total}}</p>
+                </div>
+                <div class="cartSection removeWrap">
+                    <a href="#" class="remove" data-id="{{id}}">x</a>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>
