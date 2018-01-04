@@ -9,12 +9,9 @@ class Data {
     getProducts() {
         const productItems = Object.keys(products);
 
-        return productItems.map(id => {
-          const [name, description, price, imgUrl] = products[id];
+        return productItems.map(id => this.getProduct(id));
+     }
 
-            return { id, name, description, price, imgUrl };
-        });
-    }
 
     getProduct(id) {
       const [name, description, price, imgUrl] = products[id];

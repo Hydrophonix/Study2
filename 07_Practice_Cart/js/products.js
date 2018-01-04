@@ -5,7 +5,7 @@ const shopElem = document.getElementById('shop');
 
 function renderProducts() {
   shopElem.innerHTML = Handlebars.templates.products({
-    products: data.getProducts
+    products: data.getProducts()
   });
 
   [...document.getElementsByClassName('addtocart')].forEach(item =>
