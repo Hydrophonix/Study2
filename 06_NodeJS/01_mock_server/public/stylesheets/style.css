@@ -1,83 +1,113 @@
 body {
-  padding: 50px;
+  padding: 0;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-  text-decoration: none;
+.wrapper {
+  background: linear-gradient(to top, darkgrey 0%, lightgrey 100%);
+  min-height: 100vh;
+  margin: 0 auto;
+  width: 960px;
+  padding: 50px 20px;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.75);
 }
+ .wrapper h1 {
+   text-align: center;
+ }
 
-.btn {
-  padding: 5px;
-  margin: 0px 5px;
-  border: 1px solid black;
-}
-
-.post__item {
-  width: 700px;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0px;
-  border-bottom: 1px solid black;
-}
-
-img {
-  width: 200px;
-  height: 200px;
-}
-
-h1 {
-  margin: 5px;
-}
-
-.post__item__text p {
-  margin: 0px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-}
-
-.post__item__text--description {
-  width: 300px;
-}
-
-.user__item {
-  width: 700px;
-  padding: 10px 0px;
-  border-bottom: 1px solid black;
+.wrapper nav {
+  padding: 30px 300px;
   display: flex;
   justify-content: space-between;
 }
 
-.user__item button {
-  width: 70px;
-  height: 30px;
+.wrapper > nav button {
+  width: 150px;
+  height: 55px;
+  border: none;
+  background-color: #4c8ef7;
+  font: 20px Helvetica sans-serif;
+  color: white;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.75);
 }
 
-.user__item__container {
+.wrapper > nav button:active {
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
+}
+
+.user__item, .post__item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
+}
+
+.user__item h2,
+.post__item h2 {
+  text-align: center;
+}
+
+.user__item figure {
+  padding: 0;
+  margin-right: 20px;
+  width: 200px;
+  height: 220px;
+}
+
+.user__info__container {
   display: flex;
 }
 
-.user__item__container--info {
+.user__followings {
   display: flex;
+  box-sizing: border-box;
+  padding: 15px 30px;
+  justify-content: flex-start;
 }
 
-.user__item__container--info div {
-  padding: 0px 5px;
+.user__followings > div {
+  width: 50%;
 }
 
 .decorator {
-  border-bottom: 1px solid black;
+  border: 1px solid grey;
+  border-radius: 3px;
+  width: 50%;
+  margin-bottom: 3px;
+  box-sizing: border-box;
+  padding: 0 15px;
 }
+ .wrapper button {
+   width: 75px;
+   height: 30px;
+   border: none;
+   background-color: #4c8ef7;
+   font: 14px Helvetica sans-serif;
+   color: white;
+   box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.75);
+ }
 
-.btn__container {
+.post__content {
   display: flex;
 }
 
-button {
-  padding: 3px 5px;
-  margin: 5px;
-  height: 30px;
+.post__item figure img {
+  height: 300px;
+  width: 300px;
+}
+
+.container form input {
+  width: 655px;
+  border: 1px solid grey;
+}
+
+.container form fieldset {
+  border: 1px solid black;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.75);
+  margin-bottom: 2px;
+}
+
+.container form {
+  background-color: #ddd;
 }

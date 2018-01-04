@@ -1,48 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/form.css' />
-  </head>
-  <body>
-    <a href="/api/<%= api %>/posts/"><button>BACK</button></a>
-    <h1
-      data-type='<%= type %>'
-      data-id='<%= data.postId %>'
-      data-api='<%= api %>'
-    >
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Node.JS GUI</h1>
+    <nav>
+      <a href="/api/<%= api %>/posts/"><button>BACK</button></a>
+      <button id="addBtn">EDIT POST</button>
+    </nav>
+    <h2 data-type='<%= type %>' data-id='<%= data.postId %>' data-api='<%= api %>'>
       EDIT <%= type %>/<%= data.postId %> INFO
-    </h1>
+    </h2>
     <div class="container">
       <form method="PUT">
         <fieldset>
           <p>Image url:</p>
-          <input
-            name="imgUrl"
-            placeholder="Please enter url to img"
-            type="text"
-            value='<%= data.imgUrl %>'
-          >
+          <input name="imgUrl" placeholder="Please enter url to img" type="text" value='<%= data.imgUrl %>'>
           <p>Number of likes:</p>
-          <input
-            name="likeCount"
-            placeholder="Your like count"
-            type="number"
-            value='<%= data.likeCount %>'
-          >
+          <input name="likeCount" placeholder="Your like count" type="number" value='<%= data.likeCount %>'>
           <p>Description:</p>
-          <input
-            size="70"
-            name="description"
-            placeholder="Please enter the description of your post"
-            type="textarea"
-            rows='10'
-            value='<%= data.description %>'
-          >
+          <textarea rows="8" cols="80" name="description" placeholder="Please enter the description of your post" type="textarea"><%= data.description %></textarea>
         </fieldset>
       </form>
-      <button id="addBtn">EDIT POST</button>
     </div>
-    <script type="text/javascript" src="/js/editListener.js"></script>
-  </body>
+  </div>
+  <script type="text/javascript" src="/js/editListener.js"></script>
+</body>
+
 </html>

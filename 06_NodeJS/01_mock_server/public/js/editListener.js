@@ -1,9 +1,10 @@
-const h1 = document.querySelector('h1');
-const data = {id: h1.getAttribute('data-id')};
-const type = h1.getAttribute('data-type');
-const apiVersion = h1.getAttribute('data-api');
+const h2 = document.querySelector('h2');
+const data = {id: h2.getAttribute('data-id')};
+const type = h2.getAttribute('data-type');
+const apiVersion = h2.getAttribute('data-api');
 const requestPath = `/api/${type}/`;
 const redirectUrl = `/api/${apiVersion}/${type}/`;
+const text = document.getElementsByTagName('textarea');
 
 const xhr = new XMLHttpRequest();
 xhr.open("PUT", requestPath, true);
@@ -27,5 +28,8 @@ document.getElementById('addBtn').addEventListener('click', function() {
   Array.from(document.getElementsByTagName('input'), item => {
     data[item.name] = item.value
   });
+  if (text[0]) {
+    data[text[0].name] = text[0].textContent;
+  }
   xhr.send(JSON.stringify(data));
 })

@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/form.css' />
-  </head>
-  <body>
-    <a href="/api/<%= api %>/users/"><button>BACK</button></a>
-    <h1>CREATE NEW USER</h1>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Node.JS GUI</h1>
+    <nav>
+      <a href="/api/<%= api %>/users/"><button>BACK</button></a>
+      <button form="addUser" type="submit">ADD USER</button>
+    </nav>
+    <h2>CREATE NEW USER</h2>
     <div class="container">
-      <form action="/api/<%= api %>/users/" method="post">
+      <form action="/api/<%= api %>/users/" method="post" id="addUser">
         <fieldset>
           <p>Your name:</p>
-          <input
-            name="name"
-            placeholder="Please enter your name"
-            type="text"
-            autofocus
-          >
+          <input name="name" placeholder="Please enter your name" type="text" autofocus>
           <p>Your password:</p>
-          <input
-            name="password"
-            placeholder="Please enter your password"
-            type="password"
-          >
+          <input name="password" placeholder="Please enter your password" type="password">
           <p>Your email:</p>
-          <input
-          name="email"
-          placeholder="Please enter your email"
-          type="email"
-          >
+          <input name="email" placeholder="Please enter your email" type="email">
           <p>Image url:</p>
-          <input
-            name="imgUrl"
-            placeholder="Please enter url to img"
-            type="url"
-          >
-          </fieldset>
-          <fieldset>
-            <h2>Following:</h2>
-            <p>Tags:</p>
-            <input
-              name="tags"
-              placeholder="Please enter tag"
-              type="text"
-            >
-            <p>Users:</p>
-            <input
-              name="users"
-              placeholder="Please enter users"
-              type="text"
-            >
-          </fieldset>
-          <button type="submit">ADD USER</button>
+          <input name="imgUrl" placeholder="Please enter url to img" type="url">
+        </fieldset>
+        <fieldset>
+          <h3>Following:</h3>
+          <p>Tags:</p>
+          <input name="tags" placeholder="Please enter tag" type="text">
+          <p>Users:</p>
+          <input name="users" placeholder="Please enter users" type="text">
+        </fieldset>
       </form>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

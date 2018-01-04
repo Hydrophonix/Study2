@@ -1,79 +1,56 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/form.css' />
-  </head>
-  <body>
-    <a href="/api/<%= api %>/users/"><button>BACK</button></a>
-    <h1
-      data-type='<%= type %>'
-      data-id='<%= data.id %>'
-      data-api='<%= api %>'
-    >
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="wrapper">
+    <h1>Node.JS GUI</h1>
+    <nav>
+      <a href="/api/<%= api %>/users/"><button>BACK</button></a>
+      <button id="addBtn">EDIT USER</button>
+    </nav>
+    <h2 data-type='<%= type %>' data-id='<%= data.id %>' data-api='<%= api %>'>
       EDIT <%= type %>/<%= data.id %> INFO
-    </h1>
+    </h2>
     <div class="container">
       <form>
         <fieldset>
           <p>Your name:</p>
-          <input
-            name="name"
-            placeholder="Please enter your name"
-            type="text"
-            value='<%= data.name %>'
-            autofocus
-          >
+          <input name="name" placeholder="Please enter your name" type="text" value='<%= data.name %>' autofocus>
           <p>Your password:</p>
-          <input
-            name="password"
-            placeholder="Please enter your password"
-            type="text"
-            value='<%= data.password %>'
-          >
+          <input name="password" placeholder="Please enter your password" type="text" value='<%= data.password %>'>
           <p>Your email:</p>
-          <input
-            name="email"
-            placeholder="Please enter your email"
-            type="email"
-            value='<%= data.email %>'
-          >
+          <input name="email" placeholder="Please enter your email" type="email" value='<%= data.email %>'>
           <p>Image url:</p>
-          <input
-            name="imgUrl"
-            placeholder="Please enter url to img"
-            type="url"
-            value='<%= data.image %>'
-          >
-          </fieldset>
-          <fieldset>
-            <h3>following</h3>
-            <p>Tags:</p>
-            <input
-              name="tags"
-              placeholder="Please enter tag"
-              type="text"
-              <% if (data.following.tags[0]) {%>
-                value='<%= data.following.tags[0].name %>'
-              <% } else { %>
-                value=''
+          <input name="imgUrl" placeholder="Please enter url to img" type="url" value='<%= data.image %>'>
+        </fieldset>
+        <fieldset>
+          <h3>following</h3>
+          <p>Tags:</p>
+          <input name="tags" placeholder="Please enter tag" type="text" <% if (data.following.tags[0]) {%>
+            value='<%= data.following.tags[0].name %>'
+            <% } else { %>
+              value=''
               <% } %>
-            >
-            <p>Users:</p>
-            <input
-              name="users"
-              placeholder="Please enter users"
-              type="text"
-              <% if (data.following.users[0]) {%>
-                value='<%= data.following.users[0].id %>'
-              <% } else { %>
-                value=''
-              <% } %>
-            >
-          </fieldset>
-          <button id="addBtn">EDIT USER</button>
+                >
+                <p>Users:</p>
+                <input name="users" placeholder="Please enter users" type="text" <% if (data.following.users[0]) {%>
+                  value='<%= data.following.users[0].id %>'
+                  <% } else { %>
+                    value=''
+                    <% } %>
+                      >
+        </fieldset>
       </form>
     </div>
-    <script type="text/javascript" src="/js/editListener.js"></script>
-  </body>
+  </div>
+  <script type="text/javascript" src="/js/editListener.js"></script>
+</body>
+
 </html>
