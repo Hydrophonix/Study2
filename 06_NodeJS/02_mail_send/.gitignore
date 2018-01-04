@@ -39,3 +39,6 @@ node_modules/
 
 #bower
 bower_components/
+
+#package
+package-lock.json

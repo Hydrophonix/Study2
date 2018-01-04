@@ -1,7 +1,7 @@
 {
-    "email": "hydroworkfx@gmail.com",
+    "email": "hydrotestfx@gmail.com",
     "mailAuthN": {
-        "user": "hydroworkfx@gmail.com",
-        "pass": ""
+        "user": "hydrotestfx@gmail.com",
+        "pass": "test123test"
     }
 }
