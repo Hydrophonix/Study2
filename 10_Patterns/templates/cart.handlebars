@@ -1,0 +1,33 @@
+<div class="cart">
+    <ul class="cartWrap" >
+        {{#each products}}
+            <li class="items items_{{id}}">
+                <div class="infoWrap">
+                    <div class="cartSection">
+                        <img src="{{imgUrl}}" alt="{{name}}" class="itemImg"/>
+                        <p class="itemNumber">{{id}}</p>
+                        <h3>{{name}}</h3>
+                        <p><input type="number" class="qty" value="{{qty}}"/> x ${{price}}</p>
+                    </div>
+
+                    <div class="prodTotal cartSection">
+                        <p>${{ total }}</p>
+                    </div>
+                    <div class="cartSection removeWrap">
+                        <a href="#" class="remove" data-id="{{id}}">x</a>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<div class="subtotal cf">
+    <ul>
+        <li class="totalRow"><span class="label">Subtotal</span><span class="value">${{subtotal}}</span></li>
+        <li class="totalRow"><span class="label">Shipping</span><span class="value">${{shipping}}</span></li>
+        <li class="totalRow"><span class="label">Tax</span><span class="value">${{tax}}</span></li>
+        <li class="totalRow final"><span class="label">Total</span><span class="value">${{total}}</span></li>
+        <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
+    </ul>
+</div>

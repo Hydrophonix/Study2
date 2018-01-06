@@ -1,0 +1,14 @@
+{
+  "name": "shoping-cart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./node_modules/http-server/bin/http-server",
+    "build": "./node_modules/.bin/handlebars templates/ --output templates/template.js"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0",
+    "handlebars": "^4.*.*"
+  }
+}
