@@ -1,0 +1,5 @@
+node_modules
+templates/*.js
+package-lock.json
+bin
+dist

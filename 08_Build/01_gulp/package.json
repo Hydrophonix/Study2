@@ -1,0 +1,43 @@
+{
+  "name": "shoping-cart",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp start"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^6.2.4",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.18.13",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-declare": "^0.3.0",
+    "gulp-define-module": "^0.1.5",
+    "gulp-eslint": "^4.0.0",
+    "gulp-folders": "1.1.0",
+    "gulp-handlebars": "^5.0.0",
+    "gulp-htmlhint": "^1.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-less": "3.3.0",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sourcemaps": "^2.4.0",
+    "gulp-svg-sprites": "^4.1.2",
+    "gulp-svgo": "^1.2.5",
+    "gulp-uglify": "^2.0.1",
+    "gulp-wrap": "^0.13.0",
+    "http-server": "^0.10.0",
+    "require-dir": "^0.3.2",
+    "webpack": "^1.15.0",
+    "webpack-dev-server": "^2.9.5",
+    "yargs": "^6.6.0"
+  }
+}
